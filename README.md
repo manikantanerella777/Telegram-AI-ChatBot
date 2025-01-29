@@ -125,62 +125,59 @@ docker-compose up
 ```
 🎉 Congratulations! Your AI chatbot is now live on Telegram!
 
-Configuration Guide
-🔹 Model Selection
+# Configuration Guide
+## 🔹 Model Selection
 Define your LLM (Large Language Model) in routes.py.
 Supports OpenAI, Gemini, and Anthropic models.
 If changing models in conf.py, ensure you restart the vector database (as dimensions vary per model).
-🔹 Database Setup
+## 🔹 Database Setup
 Uses MongoDB to store user data, chat history, and file metadata.
 Ensure MongoDB is running before starting the bot.
-📸Screenshot & Usage
+# 📸Screenshot & Usage
 
+![image](https://github.com/user-attachments/assets/5e8328b6-64cc-4504-b204-4b865de292db)
 
-Step 1: Setting up your Telegram bot
+- Step 1: Setting up your Telegram bot
 Before diving into the code, you'll need to create a new bot on Telegram. Follow these simple steps:
 
 Open the Telegram app and search for the "BotFather" bot.
 Start a chat with BotFather and send the command "/newbot" to create a new bot.
 Choose a name and username for your bot. BotFather will provide you with a unique API token, which you'll need later. Save it somewhere safe.
-Step 2: Cloning the code repository
+- Step 2: Cloning the code repository
 Clone the code repository from GitHub using the following command:
 
-bash
-Copy
-Edit
+```bash
 git clone --recursive https://github.com/emingenc/telegramGPT.git
 cd telegramGPT
-Step 3: Installing the dependencies
+```
+- Step 3: Installing the dependencies
 Install the required dependencies using the following command:
 
-bash
-Copy
-Edit
+```bash
 pip3 install -r requirements.txt
-Step 4: Exploring the code
+```
+- Step 4: Exploring the code
 In our project, we have four main files:
 
 telegram_bot.py: The main script that handles the Telegram bot's functionality.
 gpt_message_handler.py: Contains functions for interacting with OpenAI's GPT models and managing chat history.
 conf.py: A configuration file to store the list of allowed users.
 requirements.txt: Lists the required Python libraries for the project.
-Step 5: Configuring the bot
-Edit conf.py to add the usernames of users allowed to interact with your bot. For example:
-
-python
-Copy
-Edit
+- Step 5: Configuring the bot
+Edit conf.py to add the usernames of users allowed to interact with your bot.
+For example:
+```bash
 users = ["your_telegram_username"]
-Step 6: Setting up the environment variables
+```
+- Step 6: Setting up the environment variables
 You need to set up environment variables: TELEGRAM_TOKEN (the API token you received from BotFather) and OPENAI_API_KEY (your OpenAI API key). BOTNAME (name of bot) You can either add them to your system's environment variables or use a .env file.
 
-Step 7: Running the bot
+- Step 7: Running the bot
 Start your bot by running the telegram_bot.py script:
 
-bash
-Copy
-Edit
+```bash
 python3 telegram_bot.py
+```
 Your bot is now up and running! Start a chat with your Telegram bot and see it in action.
 
 Conclusion
