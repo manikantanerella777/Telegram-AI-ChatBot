@@ -7,4 +7,4 @@ Your smart assistant on Telegram! This AI-powered chatbot can:
 ✅ Provide entertainment &amp; fun facts 
 ✅ Chat naturally &amp; engage in conversations  Just send a message and let the AI do the rest! Try it now. 🎉
 
-#Create Your Own ChatGPT on Telegram: A Step-by-Step Guide to Building a Python-powered AI Bot
+# Create Your Own ChatGPT on Telegram: A Step-by-Step Guide to Building a Python-powered AI Bot
