@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    container_name: telegram-bot
+    environment:
+      - TELEGRAM_TOKEN=your_telegram_token
+      - OPENAI_API_KEY=your_openai_api_key
+      - MONGO_URI=mongodb://mongo:27017
+    volumes:
+      - .:/app
+    depends_on:
+      - mongo
+    restart: always
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"

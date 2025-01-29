@@ -1,0 +1,6 @@
+
+### **3. Running Your Bot:**
+- Run your bot locally with:
+
+```bash
+python bot.py
