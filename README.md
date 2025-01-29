@@ -1,68 +1,105 @@
 # Telegram-AI-ChatBot
+"AI-powered chatbot using Telegram, OpenAI, and Gemini"
 🚀 Meet Your AI Chatbot! 🤖  
-Your smart assistant on Telegram! This AI-powered chatbot can: 
-✅ Answer questions instantly 
-✅ Help with daily tasks &amp; reminders 
-✅ Generate text, summaries, and ideas 
-✅ Provide entertainment &amp; fun facts 
-✅ Chat naturally &amp; engage in conversations  Just send a message and let the AI do the rest! Try it now. 🎉
-
-# Create Your Own ChatGPT on Telegram: A Step-by-Step Guide to Building a Python-powered AI Bot
-
-## Introduction
-
-Are you tired of using the same AI-powered chatbots available on the market? Do you want to build your own chatbot and customize it to your liking? Then, look no further! In this blog post, we'll walk you through a step-by-step guide on creating your very own AI bot using Python, Telegram, and OpenAI GPT models. Get ready to unleash the power of artificial intelligence right at your fingertips!
-
-when you change models at conf.py be sure start new evctordb since vector dimension is different for each model.
-
-## Router  usage
-
-you can give any llm in routes.py file.
-
-You can add any additional llm to the routes.py file. 
-
-![telegramgpt_llm_router](https://github.com/user-attachments/assets/ff5af371-d23b-408f-981f-678f5ad5ac50)
-
-
-
-
-## Quick start
-
-### Prerequisites
-
-- A Telegram account
-- A Telegram bot API token (you can get one from the BotFather bot on Telegram)
-- An OpenAI API key (you can get one by signing up on the OpenAI website)
-- make sure you added your username env file
-- Docker and docker-compose
-
-### Steps
-
-1. Clone the repository:
+Your smart assistant on Telegram! This AI-powered chatbot.
+## Initialize Git in Your Project Folder
+- Open Terminal / Command Prompt and navigate to your project folder:
+```bash
+cd path/to/your/project
+```
+- Initialize Git:
 
 ```bash
-git clone --recursive https://github.com/emingenc/telegramGPT.git
-cd telegramGPT
+git init
+```
+Add the GitHub repository as a remote origin (replace your-username and repo-name):
+
+```bash
+git remote add origin https://github.com/your-username/Telegram-AI-ChatBo
+```
+## Add Your Project Files or File Structure
+Make sure your project folder contains these files:
+```bash
+Telegram-AI-ChatBot/
+│
+├── bot.py                  # Main bot logic
+├── routes.py               # Custom routes for different tasks (like web search)
+├── conf.py                 # Configuration file for keys and settings
+├── requirements.txt        # Required Python libraries
+├── .env                    # Environment variables (API keys, etc.)
+├── Dockerfile              # Docker setup for the bot
+├── docker-compose.yml      # Docker Compose for container orchestration
+├── models/                 # Directory for any custom models or agents (if needed)
+│   └── researcher.py       # For research or web search agents
+└── README.md               # Project documentation
+```
+📌 Important: Do NOT upload the .env file (containing API keys).
+# 📌 Create Your Own AI Chatbot on Telegram
+This guide will walk you through building a Python-powered AI chatbot using Telegram, OpenAI, and Gemini models. Customize your bot, integrate AI capabilities, and deploy it efficiently!
+
+# ⚡ Features
+## 1️⃣ User Registration
+- Stores first name, username, and chat_id in MongoDB upon first interaction.
+- Uses Telegram’s contact button to request and store the phone number.
+- Sends a confirmation message after successful registration.
+## 2️⃣ AI-Powered Chat (Gemini & OpenAI)
+- Uses Google’s Gemini API (google.generativeai) for AI-powered conversations.
+- Supports multi-LLM routing (e.g., OpenAI, Anthropic) in routes.py.
+- Stores full chat history (user input + bot response) in MongoDB with timestamps.
+## 3️⃣ Image & File Analysis
+- Accepts images (JPG, PNG) and PDFs.
+- Uses Gemini AI to analyze and describe their content.
+- Saves file metadata (filename, description, etc.) in MongoDB.
+## 4️⃣ Web Search Integration
+- Users can perform a web search by typing /websearch.
+- The bot fetches an AI-generated summary along with top web links.
+
+## 🚀 Quick Start Guide
+
+### 🔹 Prerequisites
+
+- A Telegram account
+- A Telegram Bot API token (from BotFather)
+- An OpenAI API key (Get it here)
+- A Google Gemini API key (Get it here)
+- Docker & docker-compose installed
+
+### 🔹 Setup & Installation
+#### 1️⃣ Clone the Repository
+```bash
+git clone --recursive https://github.com/your-username/Telegram-AI-ChatBot.git
+cd Telegram-AI-ChatBot
+
 ```
 
-2. Set up environment variables create .env file
-    
-    ```bash
-    TELEGRAM_TOKEN="your telegram token"
-    OPENAI_API_KEY="your openai api key"
-    BOTNAME="your bots name"
-    TAVILY_API_KEY="tav api key"
-    USERS=allowed users
-    ANTHROPIC_API_KEY="anthropic api key"
+#### 2️⃣ Set Up Environment Variables
+Create a .env file and add your API keys:
+```bash
+TELEGRAM_TOKEN="your_telegram_bot_token"
+OPENAI_API_KEY="your_openai_api_key"
+BOTNAME="your_bot_name"
+TAVILY_API_KEY="your_tavily_api_key"
+USERS="allowed_users"
+ANTHROPIC_API_KEY="your_anthropic_api_key"
+```
+#### 3️⃣ Run the Bot with Docker
 
-    ```
+```bash
+docker-compose up
+```
+🎉 Congratulations! Your AI chatbot is now live on Telegram!
 
-3. Run the bot using docker-compose:
-    
-    ```bash
-    docker-compose up
-    ```
+##  Configuration Guide
+### 🔹 Model Selection
+- Define your LLM (Large Language Model) in routes.py.
+- Supports OpenAI, Gemini, and Anthropic models.
+- If changing models in conf.py, ensure you restart the vector database (as dimensions vary per model).
+### 🔹 Database Setup
+- Uses MongoDB to store user data, chat history, and file metadata.
+- Ensure MongoDB is running before starting the bot.
 
+## 📸Screenshot & Usage
+![image](https://github.com/user-attachments/assets/85269b9c-2312-4bdc-9644-7b9650d904b2)
 
 
 ## Step 1: Setting up your Telegram bot
